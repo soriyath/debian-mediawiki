@@ -1,6 +1,9 @@
 FROM soriyath/debian-hhvm
 MAINTAINER Sumi Straessle
 
+ENV VERSION_MAJOR 1.28
+ENV VERSION_MINOR 1.28.0
+
 # Installation:
 # A separate database is needed (using mysql:5.6, postgresql doesn't work)
 #
@@ -22,9 +25,9 @@ RUN apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /srv/www
-RUN wget https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.1.tar.gz \
-	&& tar --strip-components=1 -xzf mediawiki-1.27.1.tar.gz \
-	&& rm mediawiki-1.27.1.tar.gz
+RUN wget https://releases.wikimedia.org/mediawiki/${VERSION_MAJOR}/mediawiki-${VERSION_MINOR}.tar.gz \
+	&& tar --strip-components=1 -xzf mediawiki-${VERSION_MINOR}.tar.gz \
+	&& rm mediawiki-${VERSION_MINOR}.tar.gz
 
 # default command
 CMD ["supervisord", "-c", "/etc/supervisor.conf"]

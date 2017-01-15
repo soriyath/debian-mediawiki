@@ -30,4 +30,4 @@ RUN wget https://releases.wikimedia.org/mediawiki/${VERSION_MAJOR}/mediawiki-${V
 	&& rm mediawiki-${VERSION_MINOR}.tar.gz
 
 # default command
-CMD ["supervisord", "-c", "/etc/supervisor.conf"]
+CMD ["supervisord", "-c", "/etc/supervisor/supervisor.conf"]

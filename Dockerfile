@@ -1,8 +1,8 @@
 FROM soriyath/debian-hhvm
 MAINTAINER Sumi Straessle
 
-ENV VERSION_MAJOR 1.28
-ENV VERSION_MINOR 1.28.0
+ENV VERSION_MAJOR 1.29
+ENV VERSION_MINOR 1.29.1
 
 # Installation:
 # A separate database is needed (using mysql:5.6, postgresql doesn't work)
